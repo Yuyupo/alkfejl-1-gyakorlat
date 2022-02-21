@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/16" fx:controller="com.example.gyak3.HelloController">
+
+<!--                                   1                                     -->
+<!-- Ugyanazt irja le, mint a withoutFXML fuggveny a HelloApplication-ben-->
+<!--    <VBox>-->
+<!--        <children>-->
+<!--            <Label prefHeight="108.0" prefWidth="145.0" text="FXML is awesome" />-->
+<!--            <Button text="Yeah" />-->
+<!--        </children>-->
+<!--    </VBox>-->
+<!--                                   1                                     -->
+
+
+<!--                                   2                                     -->
+<VBox fx:id="firstVbox">
+<!--    getChildren() fuggvenynek felel meg -->
+    <children>
+        <!--    onAction=#fuggvenynev ami a Controllerben lesz megtalalhato    -->
+        <Button fx:id="firstButton" text="Press me" onAction="#boxButtonClicked"/>
+        <!--    fx:id ami minden elemhez hozza rendelheto es egyertelmuen azonositja az adott elemet/node-t    -->
+        <Label fx:id="surpriseLabel" />
+        <Label fx:id="surpriseLabel2" />
+    </children>
+</VBox>
+<!--                                   2                                     -->
+
+<!--                                   3                                     -->
+<!--    Elemeket, amiket ujra szeretnenk hasznalni lehet kulon definialni, erre van az fx:define    -->
+    <fx:define>
+<!--    Kell egy fx:id az elemnek, amit el szeretnenk erni  -->
+        <ToggleGroup fx:id="wineGroup"/>
+    </fx:define>
+
+    <Label text="Wine"/>
+    <RadioButton fx:id="white" text="White" toggleGroup="$wineGroup"/>
+    <RadioButton fx:id="rose" text="Rose" toggleGroup="$wineGroup"/>
+    <RadioButton fx:id="red" text="Red" toggleGroup="$wineGroup" selected="true"/>
+    <Label fx:id="wineLabel"/>
+    <Button text="Choose" onAction="#wineSelector"/>
+<!--                                   3                                     -->
+
+</VBox>
+
