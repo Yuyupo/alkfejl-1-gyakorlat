@@ -1,0 +1,38 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <!-- Definialja a servlet nevet es a hozza tartozo java class-t-->
+  <servlet>
+    <servlet-name>HelloWorldServlet</servlet-name>
+    <servlet-class>HelloWorldServlet</servlet-class> <!-- ugyanaz a neve, mint a java classban @Webservlet tag-ben -->
+  </servlet>
+
+  <!-- Definialja hogy milyen url es servlet tartozik ossze -->
+  <servlet-mapping>
+    <servlet-name>HelloWorldServlet</servlet-name>
+    <url-pattern>/HelloWorldServlet</url-pattern>
+  </servlet-mapping>
+
+    <servlet>
+      <servlet-name>DemoServlet</servlet-name>
+      <servlet-class>DemoServlet</servlet-class>
+
+      <init-param>
+        <param-name>driver</param-name>
+        <param-value>org.sqlite.JDBC</param-value>
+      </init-param>
+    </servlet>
+
+    <servlet-mapping>
+      <servlet-name>DemoServlet</servlet-name>
+      <url-pattern>/servlet1</url-pattern>
+    </servlet-mapping>
+
+  <context-param>
+    <param-name>parameter_name</param-name>
+    <param-value>parameter_value</param-value>
+  </context-param>
+</web-app>
